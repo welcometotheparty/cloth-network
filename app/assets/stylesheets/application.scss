@@ -11,3 +11,14 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+//home-page
+
+#hotItems, #siteDescription {
+  text-align: center;
+}
+
+// items/_list
+#itemCard {
+  margin-left: 4em;
+}
