@@ -1,15 +1,36 @@
 
-<div class="threeCenteredElements" id="hotItems">
-  <div class="row">
-    <div class="col"> <img src="<%= @hotItemOne.image2 %>"></div>
-    <div class="col"><img src="<%= @hotItemTwo.image1 %>"></div>
-    <div class="col"><img src="<%= @hotItemThree.image3 %>"></div>
+<h2 id="headerHotItems">customshop</h2>
+
+<%= form_tag(search_page_path, :method => "get",
+             class: 'navbar-form navbar-left') do %>
+  <div class="input-group">
+    <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>
+    <div class="input-group-btn">
+      <%= button_tag "search", :class => 'btn btn-info',:name => nil%>
+    </div>
   </div>
-</div>
+<% end %>
 
 
-<div class="centeredText" id="siteDescription">
-  site description block
+
+<% if false %>
+  <% if not @haveImages == FALSE %>
+    <div class="threeCenteredElements" id="hotItems">
+      <div class="row">
+        <div class="col"> <%= link_to image_tag(@hotItemOne.image2), @hotItemOne %>  </div>
+        <div class="col"> <%= link_to image_tag(@hotItemTwo.image2), @hotItemTwo %>  </div>
+        <div class="col"> <%= link_to image_tag(@hotItemThree.image2), @hotItemThree %>  </div>
+      </div>
+    </div>
+  <% else  %>
+    <p>No items</p>
+  <% end %>
+<% end %>
+
+
+
+<div class="centeredText mt-3 mb-3" id="siteDescription">
+    добро пожаловать. тут ты сможешь купить/продать свое творчество.
 </div>
 
 <div class="list" id="itemList">
@@ -18,4 +39,4 @@
 
 <%= link_to 'New Item', new_item_path %>
 
-<%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Eopsaltria_australis_-_Mogo_Campground.jpg/1200px-Eopsaltria_australis_-_Mogo_Campground.jpg"), "http://www.google.com/" %>
+

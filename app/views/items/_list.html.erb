@@ -1,21 +1,20 @@
-<div class="productCard" id="itemCard">
-  <div class="card" style="width: 43rem;">
-    <% @items.each do |item| %>
-      <div class="row">
-        <img class="card-img-left" src="<%= item.image1 %>" width="300" height="300">
+
+<% @items.reverse.each do |item| %>
+  <div class="productCard" id="itemCard">
+    <div class="card" style="width: 43rem;">
+      <div class="row" id="insideCard">
+        <img class="card-img-left" src="<%= item.image1 %>" >
         <div class="itemText col mt-3" id="itemText">
           <h5 id="itemTitle" style="text-align: center">
             <%= link_to item.title, item %>
           </h5>
-          <p class="card-text" id="itemDesc" style="text-align: center">
+          <p class="card-text pl-2 pr-3" id="itemDesc" style="text-align: center">
             <%= truncate item.desc, length:300 %>
           </p>
         </div>
       </div>
-
-
-    <% end %>
+    </div>
   </div>
-</div>
+    <% end %>
 
 

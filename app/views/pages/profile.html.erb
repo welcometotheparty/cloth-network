@@ -1,0 +1,16 @@
+<div class="card" id="profileCard">
+  <h5><%= @profile.username %> </h5>
+  <p>registered at <br>
+    <%= @profile.created_at.strftime("%d-%m-%y") %></p>
+</div>
+
+<% if @items.length > 0 %>
+  <div class="profileItemsList mt-3 mb-5">
+    <%= render'items/list' %>
+  </div>
+<% else %>
+  <h2 style="text-align: center; margin-top: 300px">Nothing there :(</h2>
+  <%= link_to 'let`s lee other stufff`', root_path, class:'dropdown-item' %>
+
+<% end %>
+

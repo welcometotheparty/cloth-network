@@ -12,13 +12,40 @@
 @import "components/index";
 @import "pages/index";
 
-//home-page
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 
-#hotItems, #siteDescription {
+
+
+//home-page
+#hotItems, #siteDescription, #headerHotItems {
   text-align: center;
 }
 
 // items/_list
 #itemCard {
   margin-left: 4em;
+  margin-bottom: 15px;
+}
+
+//profile
+#profileCard {
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  position: fixed;
+  right: 120px;
+  top: 20%;
+}
+
+//layouts/_menu
+#menuBlock {
+  position: fixed;
+  right: 50px;
+  top: 40%;
+  text-align: center;
+}
+
+#siteDescription {
+  font-family: 'Comfortaa', cursive;
+  background-color: #F5FFFA;
 }

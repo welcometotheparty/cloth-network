@@ -1,64 +1,27 @@
-<p id="notice"><%= notice %></p>
+<h3 class="pt-3"><%= @item.title %> </h3>
 
-<p>
-  <strong>Title:</strong>
-  <%= @item.title %>
-</p>
+<p> <%= @item.desc %></p>
 
-<p>
-  <strong>Desc:</strong>
-  <%= @item.desc %>
-</p>
+<div class="photoGallery" id="photosOnShowItem">
+  <%= image_tag(@item.image1) %>
+  <%= image_tag(@item.image2) %>
+  <%= image_tag(@item.image3) %>
+  <%= image_tag(@item.image4) %>
+</div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @item.price %>
-</p>
 
-<p>
-  <strong>Image1:</strong>
-  <%= @item.image1 %>
-</p>
 
-<p>
-  <strong>Image2:</strong>
-  <%= @item.image2 %>
-</p>
+<%= link_to @item.user.username, profile_path(@item.user.username), class:"btn btn-light" %>
 
-<p>
-  <strong>Image3:</strong>
-  <%= @item.image3 %>
-</p>
+<% if current_user %>
+  <% if @item.user_id == current_user.id %>
+    <%= link_to 'Edit', edit_item_path(@item), class:"btn btn-light" %>
+    <%= link_to 'Delete', @item, method: :delete, data: { confirm: 'Are you sure?' } , class:"btn btn-light"%>
 
-<p>
-  <strong>Image4:</strong>
-  <%= @item.image4 %>
-</p>
-
-<p>
-  <strong>Size:</strong>
-  <%= @item.size %>
-</p>
-
-<p>
-  <strong>Condition:</strong>
-  <%= @item.condition %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @item.location %>
-</p>
-
-<p>
-  <strong>Shipment:</strong>
-  <%= @item.shipment %>
-</p>
-
-<p>
-  <strong>Tag:</strong>
-  <%= @item.tag %>
-</p>
-
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+  <% else %>
+    <%= link_to "#{@item.price}", root_path, class: "btn btn-primary" %>
+  <% end %>
+<% else %>
+  <%= link_to "#{@item.price}", new_user_registration_path, class: "btn btn-primary" %>
+<% end %>
+<%= link_to 'Back', root_path, class:"btn btn-light" %>

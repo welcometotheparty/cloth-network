@@ -12,9 +12,14 @@ class ItemsController < ApplicationController
   def show
   end
 
+  def search
+    @items = Item.search(params)
+  end
+
   # GET /items/new
   def new
     @item = Item.new
+    render :layout => 'application_wo_menu'
   end
 
   # GET /items/1/edit
@@ -24,6 +29,7 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
+
     @item = Item.new(item_params)
     @item.user_id = current_user.id
 
