@@ -1,0 +1,17 @@
+
+
+<div class="dropdown" >
+  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    customshop
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <% if user_signed_in? %>
+      <%= link_to 'Main', root_path, class:'dropdown-item' %>
+      <%= link_to 'Profile', profile_path(current_user.username), class:'dropdown-item' %>
+      <%= link_to 'Settings', edit_user_registration_path, class:'dropdown-item' %>
+      <%= link_to 'Add item', new_item_path, class:'dropdown-item' %>
+      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+    <% end  %>
+
+  </div>
+</div>

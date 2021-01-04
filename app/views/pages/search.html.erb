@@ -1,6 +1,26 @@
-<h3>Search Result</h3>
 
+<% if @results.length == 0 %>
+  <div id="nothingStuffHere">
+    <h2 style="text-align: center; margin-top: 300px">Nothing there :(</h2>
+    <%= link_to 'click on me to see other stufff :`(', root_path, class:'dropdown-item' %>
+  </div>
 
-<% @results.each do |result| %>
-  <%= result.title %><br>
+<% else  %>
+  <% @results.reverse.each do |item| %>
+    <div class="productCard mt-5" id="itemCard">
+      <div class="card" style="width: 43rem;">
+        <div class="row" id="insideCard">
+          <img class="card-img-left" src="<%= item.image1 %>" >
+          <div class="itemText col mt-3" id="itemText">
+            <h5 id="itemTitle" style="text-align: center">
+              <%= link_to item.title, item %>
+            </h5>
+            <p class="card-text pl-2 pr-3" id="itemDesc" style="text-align: center">
+              <%= truncate item.desc, length:300 %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 <% end %>

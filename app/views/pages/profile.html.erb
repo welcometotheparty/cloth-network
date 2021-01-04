@@ -12,8 +12,10 @@
     <%= render'items/list' %>
   </div>
 <% else %>
-  <h2 style="text-align: center; margin-top: 300px">Nothing there :(</h2>
-  <%= link_to 'let`s lee other stufff`', root_path, class:'dropdown-item' %>
+  <div id="nothingStuffHere">
+    <h2 style="text-align: center; margin-top: 300px">Nothing there :(</h2>
+    <%= link_to 'click on me to see other stufff :`(', root_path, class:'dropdown-item' %>
+  </div>
 
 <% end %>
 
