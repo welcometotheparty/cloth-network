@@ -25,16 +25,24 @@
 #itemCard {
   margin-left: 4em;
   margin-bottom: 15px;
-}
+} img {
+    max-height: 300px;
+    max-width: 200px;
+  }
 
-//profile
-#profileCard {
+//items/show
+#buttonsInShowItem {
   text-align: center;
   padding-left: 30px;
   padding-right: 30px;
   position: fixed;
   right: 120px;
-  top: 20%;
+  top: 15%;
+}
+#headerDescriptionInShowItem {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
 }
 
 //layouts/_menu
@@ -44,8 +52,40 @@
   top: 40%;
   text-align: center;
 }
-
+// home.erb
 #siteDescription {
   font-family: 'Comfortaa', cursive;
   background-color: #F5FFFA;
+}
+
+//profile
+#descriptionInProfile {
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  position: fixed;
+  right: 100px;
+  top: 20%;
+}
+
+.profileItemsList {
+
+  margin-top: 16%;
+}
+
+
+//carousel-slider
+
+#carouselExampleIndicators {
+  img {
+    margin: auto;
+    max-height: 800px;
+    max-width: 800px;
+  }
+}
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23300' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23300' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
 }

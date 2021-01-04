@@ -1,11 +1,14 @@
-<div class="card" id="profileCard">
-  <h5><%= @profile.username %> </h5>
-  <p>registered at <br>
-    <%= @profile.created_at.strftime("%d-%m-%y") %></p>
+<div id="descriptionInProfile">
+  <div class="card" id="profileCard">
+    <h5><%= @profile.username %> </h5>
+    <p>registered at <br>
+      <%= @profile.created_at.strftime("%d-%m-%y") %></p>
+  </div>
 </div>
 
+
 <% if @items.length > 0 %>
-  <div class="profileItemsList mt-3 mb-5">
+  <div class="profileItemsList mb-5">
     <%= render'items/list' %>
   </div>
 <% else %>

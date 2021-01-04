@@ -1,27 +1,56 @@
-<h3 class="pt-3"><%= @item.title %> </h3>
-
-<p> <%= @item.desc %></p>
-
-<div class="photoGallery" id="photosOnShowItem">
-  <%= image_tag(@item.image1) %>
-  <%= image_tag(@item.image2) %>
-  <%= image_tag(@item.image3) %>
-  <%= image_tag(@item.image4) %>
+<div id="headerDescriptionInShowItem">
+  <h3 class="pt-3"><%= @item.title %> </h3>
+  <p><%= @item.desc %></p>
 </div>
 
 
 
-<%= link_to @item.user.username, profile_path(@item.user.username), class:"btn btn-light" %>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <div class="carousel-item active">
+        <img class="d-block img-fluid" src="<%= @item.image1 %>" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block img-fluid" src="<%= @item.image2 %>" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block img-fluid" src="<%= @item.image3 %>" alt="Third slide">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 
-<% if current_user %>
-  <% if @item.user_id == current_user.id %>
-    <%= link_to 'Edit', edit_item_path(@item), class:"btn btn-light" %>
-    <%= link_to 'Delete', @item, method: :delete, data: { confirm: 'Are you sure?' } , class:"btn btn-light"%>
 
-  <% else %>
-    <%= link_to "#{@item.price}", root_path, class: "btn btn-primary" %>
-  <% end %>
-<% else %>
-  <%= link_to "#{@item.price}", new_user_registration_path, class: "btn btn-primary" %>
-<% end %>
-<%= link_to 'Back', root_path, class:"btn btn-light" %>
+
+
+<div id="buttonsInShowItem">
+  <div class="card">
+    <%= link_to @item.user.username, profile_path(@item.user.username), class:"btn btn-light" %>
+
+    <% if current_user %>
+      <% if @item.user_id == current_user.id %>
+        <%= link_to 'Edit', edit_item_path(@item), class:"btn btn-light" %>
+        <%= link_to 'Delete', @item, method: :delete, data: { confirm: 'Are you sure?' } , class:"btn btn-light"%>
+      <% else %>
+        <%= link_to "#{@item.price}", root_path, class: "btn btn-primary" %>
+      <% end %>
+    <% else %>
+      <%= link_to "#{@item.price}", new_user_registration_path, class: "btn btn-primary" %>
+    <% end %>
+
+    <%= link_to 'Back', root_path, class:"btn btn-light" %>
+  </div>
+</div>
+
