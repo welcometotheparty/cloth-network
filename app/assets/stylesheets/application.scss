@@ -42,6 +42,12 @@
     max-height: 300px;
     max-width: 200px;
   }
+  a {
+    color: black;
+  }
+  .card-text {
+    color: #565656;
+  }
 
 //items/show
 #buttonsInShowItem {
@@ -52,7 +58,7 @@
 }
 #headerDescriptionInShowItem {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 50px;
 }
 
@@ -66,7 +72,25 @@
 // home.erb
 #siteDescription {
   font-family: 'Comfortaa', cursive;
-  background-color: #F5FFFA;
+  background: linear-gradient(45deg,#00467F, #A5CC82);
+  animation: gradient 5s ease infinite;
+  background-size: 200%, 200%;
+
+  p {
+    color: whitesmoke;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;;
+  }
 }
 
 //profile

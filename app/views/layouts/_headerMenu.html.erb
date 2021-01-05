@@ -1,7 +1,7 @@
 
 
 <div class="dropdown" >
-  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     customshop
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -11,7 +11,10 @@
       <%= link_to 'Settings', edit_user_registration_path, class:'dropdown-item' %>
       <%= link_to 'Add item', new_item_path, class:'dropdown-item' %>
       <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
-    <% end  %>
+    <% else %>
+      <%= link_to "Log In", new_user_session_path, class: "btn btn-light" %>
+      <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-light" %>
+    <% end %>
 
   </div>
 </div>

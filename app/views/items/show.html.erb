@@ -44,10 +44,10 @@
         <%= link_to 'Edit', edit_item_path(@item), class:"btn btn-light" %>
         <%= link_to 'Delete', @item, method: :delete, data: { confirm: 'Are you sure?' } , class:"btn btn-light"%>
       <% else %>
-        <%= link_to "#{@item.price}", root_path, class: "btn btn-primary" %>
+        <%= link_to "#{@item.price}", root_path, class: "btn btn-dark" %>
       <% end %>
     <% else %>
-      <%= link_to "#{@item.price}", new_user_registration_path, class: "btn btn-primary" %>
+      <%= link_to "#{@item.price}", new_user_registration_path, class: "btn btn-dark" %>
     <% end %>
 
     <%= link_to 'Back', root_path, class:"btn btn-light" %>
