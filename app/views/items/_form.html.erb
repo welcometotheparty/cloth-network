@@ -9,7 +9,7 @@
     <%= f.input :desc , :label => "Описание/особенности", :maxlength => 282, input_html: {rows: 6, cols: 10} %>
     <%= f.input :sex, :label => "Пол", as: :select, collection: ['муж','жен']  %>
     <%= f.input :tag, :label => "Тип", as: :select, collection: ['верхняя одежда','верх', 'низ', 'обувь', 'другое']  %>
-    <%= f.input :price, :label => "Цена" %>
+    <%= f.input :price, :label => "Цена (₽)" %>
     <%= f.input :image1, :label => "Ссылка на первое фото" %>
     <%= f.input :image2, :label => "Ссылка на второе фото" %>
     <%= f.input :image3, :label => "Ссылка на третье фото" %>
@@ -19,6 +19,6 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit , class: "btn btn-primary" %>
+    <%= f.button :submit , class: "btn btn-dark"  %>
   </div>
 <% end %>
