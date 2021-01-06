@@ -7,14 +7,11 @@
   <div class="form-inputs">
     <%= f.input :title, :label => "Заголовок"%>
     <%= f.input :desc , :label => "Описание/особенности", :maxlength => 282, input_html: {rows: 6, cols: 10} %>
-    <%= f.input :sex, :label => "Пол", as: :select, collection: ['муж','жен']  %>
-    <%= f.input :tag, :label => "Тип", as: :select, collection: ['верхняя одежда','верх', 'низ', 'обувь', 'другое']  %>
     <%= f.input :price, :label => "Цена (₽)" %>
     <%= f.input :image1, :label => "Ссылка на первое фото" %>
     <%= f.input :image2, :label => "Ссылка на второе фото" %>
     <%= f.input :image3, :label => "Ссылка на третье фото" %>
-    <%= f.input :size, :label => "Размер", as: :select, collection: ['XS / 42 EU','S / 44-46 EU', 'M / 48-50EU', 'L / 52-54', 'XL / 56 EU'] %>
-    <%= f.input :location, :label => "Страна, город" %>
+
 
   </div>
 
