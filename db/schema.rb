@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_12_09_064653) do
     t.string "sex", default: "муж"
     t.string "size", default: "M / 48-50EU"
     t.string "location", default: "Moscow"
-    t.string "tag", default: "верх"
+    t.string "tag", default: "обувь"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

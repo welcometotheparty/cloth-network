@@ -3,15 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @items = Item.all
-    @fuck = @items.length
-    if @items.length > 3
-      @hotItems = Item.order("created_at").limit(3)
-      @hotItemOne = @hotItems[0]
-      @hotItemTwo = @hotItems[1]
-      @hotItemThree = @hotItems[2]
-    else
-      @haveImages = FALSE
-    end
   end
 
   def profile

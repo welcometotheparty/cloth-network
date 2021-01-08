@@ -1,7 +1,4 @@
 
-
-
-
 <%= form_tag(search_page_path, :method => "get",
              class: 'navbar-form navbar-left') do %>
   <div class="input-group">
@@ -13,25 +10,8 @@
 <% end %>
 
 
-
-<% if false %>
-  <% if not @haveImages == FALSE %>
-    <div class="threeCenteredElements" id="hotItems">
-      <div class="row">
-        <div class="col"> <%= link_to image_tag(@hotItemOne.image2), @hotItemOne %>  </div>
-        <div class="col"> <%= link_to image_tag(@hotItemTwo.image2), @hotItemTwo %>  </div>
-        <div class="col"> <%= link_to image_tag(@hotItemThree.image2), @hotItemThree %>  </div>
-      </div>
-    </div>
-  <% else  %>
-    <p>No items</p>
-  <% end %>
-<% end %>
-
-
-
 <div class="centeredText mt-3 mb-3" id="siteDescription">
-  <p> welcome</p>
+  <p> clothstore </p>
 </div>
 
 <div class="list" id="itemList">
