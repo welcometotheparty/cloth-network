@@ -1,1 +1,5 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Store web app builded with Ruby on Rails
+
+Ruby 2.7.2 
+Rails 6.0.3 
+Bootstrap 

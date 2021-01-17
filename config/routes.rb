@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  get '/search' => 'pages#search', :as => 'search_page'
+ #  get '/search' => 'pages#search', :as => 'search_page'
+  get '/search' => 'pages#search', as: 'search_page'
+  
   get ":username" => "pages#profile", as: :profile
 
 
