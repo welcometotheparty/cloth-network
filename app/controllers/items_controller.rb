@@ -19,7 +19,8 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
-    render :layout => 'application_wo_menu'
+    # render :layout => 'application_wo_menu'
+   render 'views/items/new', layout: 'application_wo_menu'
   end
 
   # GET /items/1/edit
