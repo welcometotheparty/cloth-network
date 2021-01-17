@@ -12,12 +12,16 @@ class PagesController < ApplicationController
 
 
   def search
-    if params[:search].blank?
-      redirect_to(root_path, alert: "пустое поле") and return
-    else
-      @parameter = params[:search].downcase
-      @results = Item.all.where("lower(title) LIKE :search", search: "%#{@parameter}%")
-    end
+#     if params[:search].blank?
+#       redirect_to(root_path, alert: "пустое поле") and return
+#     else
+#       @parameter = params[:search].downcase
+#       @results = Item.all.where("lower(title) LIKE :search", search: "%#{@parameter}%")
+#     end
+    
+    redirect_to(root_path, notice: "пустое поле") if params[:search].blank?
+    @parameter = params[:search].downcase
+    @results = Item.all.where("lower(title) LIKE :search", search: "%#{@parameter}%")
   end
 
 
